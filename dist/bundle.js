@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log("test"),console.log("test2"),console.log("test3")})();
+(()=>{"use strict";var e,a;e=document.querySelector(".overlay"),a=document.querySelector(".header-modal "),document.addEventListener("click",(function(t){var s=t.target;s.classList.contains("headerModal")?(a.classList.toggle("header-modal"),e.style.display="initial"):s.classList.contains("header-modal__close")&&(a.classList.toggle("header-modal"),e.style.display="none")}))})();
