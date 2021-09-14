@@ -1,5 +1,5 @@
-const showBenefit = () => {
-  class SliderCarusel {
+const slider = () => {
+  class Slider {
     constructor({ main, wrap, next, prev, infinity = false, position = 0, slidesToShow = 4, responsive = [] }) {
       this.main = document.querySelector(main);
       this.wrap = document.querySelector(wrap);
@@ -29,10 +29,10 @@ const showBenefit = () => {
       }
     }
     addGloClass() {
-      this.main.classList.add("glo-slider");
-      this.wrap.classList.add("glo-slider__wrap");
+      this.main.classList.add("slider-service");
+      this.wrap.classList.add("slider-service__wrap");
       for (const item of this.slides) {
-        item.classList.add("glo-slider__item");
+        item.classList.add("slider-service__item");
       }
     }
     addStyle() {
@@ -44,49 +44,26 @@ const showBenefit = () => {
       }
 
       style.textContent = `
-      .glo-slider{
-        overflow: hidden !important;
-        width: 559px;
-        margin: 0 auto;
-      }
-      .glo-slider__wrap{
-        display: flex !important;
-        transition: transform 0.5s !important;
-        will-change: transform !important;
+        .slider-service{
+          overflow: hidden !important;
+          margin: 0 auto;
+        }
+        .slider-service__wrap{
+          display: flex !important;
+          transition: transform 0.5s !important;
+          will-change: transform !important;
+
+        }
+        .slider-service__item{
+          display: flex !important;
+          align-items: center !important;
+          flex-direction: column;
+          justify-content: center !important;
+          flex: 0 0 ${this.options.widthSlide}% !important;
+          margin: auto 0 !important;
+        }
         
-      }
-      .glo-slider__item{
-        display: flex !important;
-        align-items: center !important;
-        flex-direction: column;
-        justify-content: center !important;
-        flex: 0 0 ${this.options.widthSlide}% !important;
-        margin: auto 0 !important;
-      }
-      .glo-slider__prev,
-      .glo-slider__next{
-        margin: 0 10px;
-        border: 20px solid transparent;
-        background: transparent;
-      }
-      .glo-slider__next{
-        border-left-color: #19b5fe;
-      }
-      .glo-slider__prev{
-        border-right-color: #19b5fe;
-      }
-      .glo-slider__prev:hover,
-      .glo-slider__next:hover,
-      .glo-slider__prev:focus,
-      .glo-slider__next:focus{
-        background: transparent;
-        outline: transparent;
-      }
-      @media (max-width: 576px) {
-      .glo-slider {
-        width: 188px;
-      }
-    }`;
+      }`;
       document.head.appendChild(style);
     }
     controlSlider() {
@@ -145,12 +122,12 @@ const showBenefit = () => {
       window.addEventListener("resize", checkResponse);
     }
   }
-  const carousel = new SliderCarusel({
-    main: ".benefits-inner",
-    wrap: ".benefits-wrap",
-    prev: ".benefits__arrow--right",
-    next: ".benefits__arrow--left",
-    slidesToShow: 3,
+  const carousel = new Slider({
+    main: ".slider",
+    wrap: ".slider-wrap",
+    prev: ".services__arrow--right",
+    next: ".services__arrow--left",
+    slidesToShow: 2,
     infinity: true,
     responsive: [
       {
@@ -161,4 +138,4 @@ const showBenefit = () => {
   });
   carousel.init();
 };
-export default showBenefit;
+export default slider;
