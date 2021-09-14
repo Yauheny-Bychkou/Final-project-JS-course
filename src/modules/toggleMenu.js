@@ -1,7 +1,8 @@
 const toggleMenu = () => {
-  const overlay = document.querySelector(".overlay");
-  const headerModal = document.querySelector(".header-modal ");
-  const navbar = document.querySelector(".navbar");
+  const overlay = document.querySelector(".overlay"),
+    headerModal = document.querySelector(".header-modal "),
+    navbar = document.querySelector(".navbar"),
+    service = document.querySelector(".services-modal");
 
   window.addEventListener("scroll", function (e) {
     if (pageYOffset >= 214.39999389648438) {
@@ -22,6 +23,12 @@ const toggleMenu = () => {
     } else if (target.closest(".navbar") && target.classList.contains("fancyboxModal")) {
       headerModal.classList.toggle("header-modal");
       overlay.style.display = "initial";
+    } else if (target.classList.contains("service-link")) {
+      service.style.display = "initial";
+      overlay.style.display = "initial";
+    } else if (target.classList.contains("services-modal__close")) {
+      service.style.display = "none";
+      overlay.style.display = "none";
     }
   });
 };
