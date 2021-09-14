@@ -1,8 +1,8 @@
 function countTimer(deadline) {
-  let timerDay = document.querySelector(".days");
-  let timerHour = document.querySelector(".hours");
-  let timerMinutes = document.querySelector(".minutes");
-  let timerSeconds = document.querySelector(".seconds");
+  let timerDay = document.querySelectorAll(".days");
+  let timerHour = document.querySelectorAll(".hours");
+  let timerMinutes = document.querySelectorAll(".minutes");
+  let timerSeconds = document.querySelectorAll(".seconds");
 
   function getTimeRemaining() {
     let dateStop = new Date(deadline).getTime(),
@@ -19,30 +19,47 @@ function countTimer(deadline) {
     let timer = getTimeRemaining();
 
     if (timer.timeRemaining > 0) {
-      if (timer.days < 10) {
-        timerDay.textContent = `0${timer.days}`;
-      } else {
-        timerDay.textContent = `${timer.days}`;
-      }
-      if (timer.hours < 10) {
-        timerHour.textContent = `0${timer.hours}`;
-      } else {
-        timerHour.textContent = `${timer.hours}`;
-      }
-      if (timer.minutes < 10) {
-        timerMinutes.textContent = `0${timer.minutes}`;
-      } else {
-        timerMinutes.textContent = `${timer.minutes}`;
-      }
-      if (timer.seconds < 10) {
-        timerSeconds.textContent = `0${timer.seconds}`;
-      } else {
-        timerSeconds.textContent = `${timer.seconds}`;
-      }
+      timerDay.forEach((elem) => {
+        if (timer.days < 10) {
+          elem.textContent = `0${timer.days}`;
+        } else {
+          elem.textContent = `${timer.days}`;
+        }
+      });
+      timerHour.forEach((elem) => {
+        if (timer.hours < 10) {
+          elem.textContent = `0${timer.hours}`;
+        } else {
+          elem.textContent = `${timer.hours}`;
+        }
+      });
+      timerMinutes.forEach((elem) => {
+        if (timer.minutes < 10) {
+          elem.textContent = `0${timer.minutes}`;
+        } else {
+          elem.textContent = `${timer.minutes}`;
+        }
+      });
+      timerSeconds.forEach((elem) => {
+        if (timer.seconds < 10) {
+          elem.textContent = `0${timer.seconds}`;
+        } else {
+          elem.textContent = `${timer.seconds}`;
+        }
+      });
     } else {
-      timerHour.textContent = "00";
-      timerMinutes.textContent = "00";
-      timerSeconds.textContent = "00";
+      timerDay.forEach((elem) => {
+        elem.textContent = "00";
+      });
+      timerHour.forEach((elem) => {
+        elem.textContent = "00";
+      });
+      timerMinutes.forEach((elem) => {
+        elem.textContent = "00";
+      });
+      timerSeconds.forEach((elem) => {
+        elem.textContent = "00";
+      });
     }
   }
   updateClock();

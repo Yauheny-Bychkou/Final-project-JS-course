@@ -29,6 +29,11 @@ const toggleMenu = () => {
     } else if (target.classList.contains("services-modal__close")) {
       service.style.display = "none";
       overlay.style.display = "none";
+    } else if (target.classList.contains("smooth-scroll__img")) {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     }
   });
 };
