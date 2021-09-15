@@ -30,8 +30,8 @@ const sendForm = () => {
       if(total){
         body.total = total.value;
       }
+      
       const postData = (body) => {
-        console.log(total.value);
         return fetch("./server.php", {
           method: "POST",
           headers: {
