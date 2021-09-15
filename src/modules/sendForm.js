@@ -1,12 +1,15 @@
+
 const sendForm = () => {
+  
   const errorMessage = "Что-то пошло нет так...",
     loadMessage = "Загрузка...",
     successMesage = "Спасибо! Мы скоро с вами свяжемся!";
 
   const form = document.querySelectorAll(".form-horizontal");
-
+  let total = document.getElementById('calc-total');
   const loaddMessage = document.createElement("div");
   const stususMessage = document.createElement("div");
+  
   loaddMessage.classList.add("example");
   stususMessage.style.cssText = "font-size: 2rem";
   stususMessage.style.cssText = "color: black";
@@ -21,12 +24,14 @@ const sendForm = () => {
       stususMessage.textContent = loadMessage;
       const formData = new FormData(elem);
       let body = {};
-
       formData.forEach((val, key) => {
         body[key] = val;
       });
-
+      if(total){
+        body.total = total.value;
+      }
       const postData = (body) => {
+        console.log(total.value);
         return fetch("./server.php", {
           method: "POST",
           headers: {

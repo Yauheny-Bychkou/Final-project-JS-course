@@ -1,3 +1,4 @@
+
 const validateInput = () => {
   let inputsName = document.querySelectorAll(".name-discont");
   let inputsPhone = document.querySelectorAll(".phone-discont");
@@ -20,4 +21,5 @@ const validateInput = () => {
  });
   
 };
+
 export default validateInput;
