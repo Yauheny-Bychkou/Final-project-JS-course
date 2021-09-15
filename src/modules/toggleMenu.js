@@ -34,7 +34,10 @@ const toggleMenu = () => {
         top: 0,
         behavior: "smooth",
       });
-    } 
+    } else if(target.classList.contains('overlay')){
+      headerModal.classList.toggle("header-modal");
+      overlay.style.display = "none";
+    }
   });
 };
 export default toggleMenu;
