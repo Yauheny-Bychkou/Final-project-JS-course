@@ -116,8 +116,8 @@ const showBenefit = () => {
     addArrow() {
       this.prev = document.createElement("button");
       this.next = document.createElement("button");
-      this.prev.className = "glo-slider__next";
-      this.next.className = "glo-slider__prev";
+      this.prev.className = "glo-slider__prev";
+      this.next.className = "glo-slider__next";
       this.main.appendChild(this.prev);
       this.main.appendChild(this.next);
     }

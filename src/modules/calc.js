@@ -13,7 +13,7 @@ const calc = () => {
  const countSum = () => {
    calcTypeBalkon = calcType.options[calcType.selectedIndex].value;
    typeValueMaterial = calcTypeMaterial.options[calcTypeMaterial.selectedIndex].value;
-   total.value = calcTypeBalkon*typeValueMaterial * square.value;
+   total.value = Math.floor(calcTypeBalkon*typeValueMaterial * square.value);
   
  };
 
