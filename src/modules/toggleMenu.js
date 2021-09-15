@@ -34,7 +34,7 @@ const toggleMenu = () => {
         top: 0,
         behavior: "smooth",
       });
-    }
+    } 
   });
 };
 export default toggleMenu;
