@@ -9,7 +9,7 @@ import showSertificate from "./modules/showSertificate";
 toggleMenu();
 showBenefit();
 slider();
-countTimer("16 september 2021");
+countTimer("22 september 2021");
 sendForm();
 validateInput();
 calc();
