@@ -15,10 +15,10 @@ const toggleMenu = () => {
   document.addEventListener("click", (event) => {
     let target = event.target;
     if (target.classList.contains("headerModal")) {
-      headerModal.classList.toggle("header-modal");
+      headerModal.style.display = "initial";
       overlay.style.display = "initial";
     } else if (target.classList.contains("header-modal__close")) {
-      headerModal.classList.toggle("header-modal");
+      headerModal.style.display = "none";
       overlay.style.display = "none";
     } else if (target.closest(".navbar") && target.classList.contains("fancyboxModal")) {
       headerModal.classList.toggle("header-modal");
@@ -35,8 +35,9 @@ const toggleMenu = () => {
         behavior: "smooth",
       });
     } else if(target.classList.contains('overlay')){
-      headerModal.classList.toggle("header-modal");
+      headerModal.style.display = "none";
       overlay.style.display = "none";
+      service.style.display = "none";
     }
   });
 };
