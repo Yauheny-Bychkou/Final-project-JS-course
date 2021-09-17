@@ -1,4 +1,5 @@
 const toggleMenu = () => {
+  
   const overlay = document.querySelector(".overlay"),
     headerModal = document.querySelector(".header-modal "),
     navbar = document.querySelector(".navbar"),
@@ -38,6 +39,42 @@ const toggleMenu = () => {
       headerModal.style.display = "none";
       overlay.style.display = "none";
       service.style.display = "none";
+    } else if(target.tagName === "A" && target.getAttribute("href") === "#offer"){
+      let href = target.getAttribute('href');
+      event.preventDefault();
+      window.location.href = href;
+      history.pushState('', document.title, window.location.pathname);
+    } else if(target.tagName === "A" && target.getAttribute("href") === "#benefits"){
+      let href = target.getAttribute('href');
+      event.preventDefault();
+      window.location.href = href;
+      history.pushState('', document.title, window.location.pathname);
+    } else if(target.tagName === "A" && target.getAttribute("href") === "#services"){
+      let href = target.getAttribute('href');
+      event.preventDefault();
+      window.location.href = href;
+      history.pushState('', document.title, window.location.pathname);
+    }
+    else if(target.tagName === "A" && target.getAttribute("href") === "#reviews"){
+      let href = target.getAttribute('href');
+      event.preventDefault();
+      window.location.href = href;
+      history.pushState('', document.title, window.location.pathname);
+    } else if(target.tagName === "A" && target.getAttribute("href") === "#about"){
+      let href = target.getAttribute('href');
+      event.preventDefault();
+      window.location.href = href;
+      history.pushState('', document.title, window.location.pathname);
+    } else if(target.tagName === "A" && target.getAttribute("href") === "#documents"){
+      let href = target.getAttribute('href');
+      event.preventDefault();
+      window.location.href = href;
+      history.pushState('', document.title, window.location.pathname);
+    } else if(target.tagName === "A" && target.getAttribute("href") === "#contacts"){
+      let href = target.getAttribute('href');
+      event.preventDefault();
+      window.location.href = href;
+      history.pushState('', document.title, window.location.pathname);
     }
   });
 };

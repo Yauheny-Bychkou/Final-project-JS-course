@@ -5,7 +5,7 @@ const sendForm = () => {
     loadMessage = "Загрузка...",
     successMesage = "Спасибо! Мы скоро с вами свяжемся!";
 
-  const form = document.querySelectorAll(".form-horizontal");
+  const form = document.querySelectorAll("form");
   let total = document.getElementById('calc-total');
   const loaddMessage = document.createElement("div");
   const stususMessage = document.createElement("div");
